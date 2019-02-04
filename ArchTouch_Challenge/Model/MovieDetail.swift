@@ -12,9 +12,8 @@ class MovieDetail {
     
     var adult: Bool?
     var backdrop_path: String?
-    //var belongs_to_collection: [belongs_to_collection]?
     var budget: Int?
-    //var genres: [genres]?
+    var genres = [Genres]()
     var homepage: String?
     var id: Int?
     var imdb_id: String?
@@ -23,12 +22,9 @@ class MovieDetail {
     var overview: String?
     var popularity: Double?
     var poster_path: String?
-    //var production_companies: [production_companies]?
-    //var production_countries: [production_countries]?
     var release_date: String?
     var revenue: Int?
     var runtime: Int?
-    //var spoken_languages: [spoken_languages]?
     var status: String?
     var tagline: String?
     var title: String?
@@ -45,6 +41,11 @@ class MovieDetail {
         }
         if let value = dictionary["budget"] as? Int {
             budget = value
+        }
+        if let item = dictionary["genres"] as? [[String:AnyObject]] {
+            for value in item {
+                genres.append(Genres(dictionary: value))
+            }
         }
         if let value = dictionary["homepage"] as? String {
             homepage = value

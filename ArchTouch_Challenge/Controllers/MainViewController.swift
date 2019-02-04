@@ -117,10 +117,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailVC") as? MovieDetailViewController {
-            //vc.selectedCardToPresent = selectedCard
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        
+        guard let cell = moviesCollectionView.cellForItem(at: indexPath) as? MovieCollectionCell else {return}
+            
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailVC") as? MovieDetailViewController {
+                vc.movieID = cell.movieID
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

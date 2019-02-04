@@ -15,6 +15,8 @@ class MovieCollectionCell: UICollectionViewCell {
     @IBOutlet weak var movie_nameLbl: UILabel!
     @IBOutlet weak var release_dateLbl: UILabel!
     
+    var movieID = Int()
+    
     func configureLayout() {
         movie_background.layer.borderColor = UIColor.white.cgColor
         movie_background.layer.borderWidth = 1
@@ -27,15 +29,19 @@ class MovieCollectionCell: UICollectionViewCell {
             
             if let data = object {
                 
-                self.movie_background.image = #imageLiteral(resourceName: "theMovieDbLogo")
+                self.movie_background.image = #imageLiteral(resourceName: "Tmdb")
                 self.movie_background.kf.indicatorType = .activity
                 self.movie_background.kf.indicator?.startAnimatingView()
+                
+                if let id = data.id {
+                    movieID = id
+                }
                 
                 if let original_title  = data.original_title {
                     movie_nameLbl.text = original_title
                 }
                 if let release_date = data.release_date {
-                    release_dateLbl.text = release_date
+                    release_dateLbl.text = "Release date: \(release_date)"
                 }
                 if let imageUrl = data.poster_path {
                     
@@ -46,7 +52,7 @@ class MovieCollectionCell: UICollectionViewCell {
                         }
                     }
                 }else{
-                    self.movie_background.image = #imageLiteral(resourceName: "theMovieDbLogo")
+                    self.movie_background.image = #imageLiteral(resourceName: "Tmdb")
                 }
             }
         }

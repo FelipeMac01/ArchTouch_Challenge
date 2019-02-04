@@ -47,4 +47,23 @@ class Utilities: NSObject {
         alert.addAction(OKAction)
         view.present(alert, animated: true, completion: nil)
     }
+    
+    //MARK: - Add2ColorsLabel
+    
+    static func addTwoColorsInLabel(string1: String, sizeColorA: CGFloat, sizeColorB: CGFloat, string2:String) -> NSMutableAttributedString {
+        
+        let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: sizeColorA), NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: sizeColorB), NSAttributedString.Key.foregroundColor : UIColor.green]
+        
+        let attributedString1 = NSMutableAttributedString(string:string1, attributes:attrs1)
+        
+        let attributedString2 = NSMutableAttributedString(string:string2, attributes:attrs2)
+        
+        attributedString1.append(attributedString2)
+        return attributedString1
+    }
+    
+
 }
+

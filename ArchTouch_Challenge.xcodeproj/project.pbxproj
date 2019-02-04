@@ -21,6 +21,7 @@
 		EF79DB8D2208808D007D67F6 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB8C2208808D007D67F6 /* MovieCollectionCell.swift */; };
 		EF79DB8F2208894A007D67F6 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB8E2208894A007D67F6 /* MovieDetailViewController.swift */; };
 		EF79DB9122088D59007D67F6 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB9022088D59007D67F6 /* MovieDetail.swift */; };
+		EF79DB932208B5C8007D67F6 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB922208B5C8007D67F6 /* Genres.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EF79DB8C2208808D007D67F6 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
 		EF79DB8E2208894A007D67F6 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		EF79DB9022088D59007D67F6 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		EF79DB922208B5C8007D67F6 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				EF79DB8522087665007D67F6 /* Movie.swift */,
 				EF79DB9022088D59007D67F6 /* MovieDetail.swift */,
+				EF79DB922208B5C8007D67F6 /* Genres.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54283365220792EC00F86B23 /* Utilities.swift in Sources */,
+				EF79DB932208B5C8007D67F6 /* Genres.swift in Sources */,
 				5428335E2207676500F86B23 /* MainViewController.swift in Sources */,
 				542833472207631E00F86B23 /* AppDelegate.swift in Sources */,
 				EF79DB9122088D59007D67F6 /* MovieDetail.swift in Sources */,
