@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		542833472207631E00F86B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542833462207631E00F86B23 /* AppDelegate.swift */; };
-		542833492207631E00F86B23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542833482207631E00F86B23 /* ViewController.swift */; };
 		5428334C2207631E00F86B23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5428334A2207631E00F86B23 /* Main.storyboard */; };
 		5428334E2207633900F86B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5428334D2207633900F86B23 /* Assets.xcassets */; };
 		542833512207633900F86B23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5428334F2207633900F86B23 /* LaunchScreen.storyboard */; };
+		5428335E2207676500F86B23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428335D2207676500F86B23 /* MainViewController.swift */; };
+		54283363220789C000F86B23 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54283362220789BF00F86B23 /* Default-568h@2x.png */; };
+		54283365220792EC00F86B23 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54283364220792EC00F86B23 /* Utilities.swift */; };
+		542833672207AC7A00F86B23 /* TabBarPrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542833662207AC7A00F86B23 /* TabBarPrincipalViewController.swift */; };
+		AA86DE26C9BF346B8AE8C5F7 /* Pods_ArchTouch_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8841B435324C0C625792D302 /* Pods_ArchTouch_Challenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E64F36CABF3AB30ACA55846 /* Pods-ArchTouch_Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchTouch_Challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchTouch_Challenge/Pods-ArchTouch_Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		542833432207631E00F86B23 /* ArchTouch_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchTouch_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		542833462207631E00F86B23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		542833482207631E00F86B23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5428334B2207631E00F86B23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5428334D2207633900F86B23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		542833502207633900F86B23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		542833522207633900F86B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5428335D2207676500F86B23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		54283362220789BF00F86B23 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		54283364220792EC00F86B23 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		542833662207AC7A00F86B23 /* TabBarPrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPrincipalViewController.swift; sourceTree = "<group>"; };
+		75859EB56FE89A31470C1662 /* Pods-ArchTouch_Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchTouch_Challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchTouch_Challenge/Pods-ArchTouch_Challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		8841B435324C0C625792D302 /* Pods_ArchTouch_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchTouch_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA86DE26C9BF346B8AE8C5F7 /* Pods_ArchTouch_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E18D42198CC0D094BEA9319 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8841B435324C0C625792D302 /* Pods_ArchTouch_Challenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5428333A2207631E00F86B23 = {
 			isa = PBXGroup;
 			children = (
+				54283362220789BF00F86B23 /* Default-568h@2x.png */,
 				542833452207631E00F86B23 /* ArchTouch_Challenge */,
 				542833442207631E00F86B23 /* Products */,
+				B0AC960DFFF8E7182E4A46D3 /* Pods */,
+				1E18D42198CC0D094BEA9319 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +76,65 @@
 		542833452207631E00F86B23 /* ArchTouch_Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				542833462207631E00F86B23 /* AppDelegate.swift */,
-				542833482207631E00F86B23 /* ViewController.swift */,
-				5428334A2207631E00F86B23 /* Main.storyboard */,
-				5428334D2207633900F86B23 /* Assets.xcassets */,
-				5428334F2207633900F86B23 /* LaunchScreen.storyboard */,
 				542833522207633900F86B23 /* Info.plist */,
+				5428335C2207656E00F86B23 /* Files */,
+				5428335B2207654700F86B23 /* Storyboard */,
+				542833592207652D00F86B23 /* Model */,
+				5428335A2207653500F86B23 /* View */,
+				542833582207651B00F86B23 /* Controllers */,
+				5428334D2207633900F86B23 /* Assets.xcassets */,
 			);
 			path = ArchTouch_Challenge;
+			sourceTree = "<group>";
+		};
+		542833582207651B00F86B23 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5428335D2207676500F86B23 /* MainViewController.swift */,
+				542833662207AC7A00F86B23 /* TabBarPrincipalViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		542833592207652D00F86B23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5428335A2207653500F86B23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5428335B2207654700F86B23 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5428334A2207631E00F86B23 /* Main.storyboard */,
+				5428334F2207633900F86B23 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		5428335C2207656E00F86B23 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				542833462207631E00F86B23 /* AppDelegate.swift */,
+				54283364220792EC00F86B23 /* Utilities.swift */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		B0AC960DFFF8E7182E4A46D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75859EB56FE89A31470C1662 /* Pods-ArchTouch_Challenge.debug.xcconfig */,
+				3E64F36CABF3AB30ACA55846 /* Pods-ArchTouch_Challenge.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 542833552207633900F86B23 /* Build configuration list for PBXNativeTarget "ArchTouch_Challenge" */;
 			buildPhases = (
+				B4F6806C027F3E2F00707D54 /* [CP] Check Pods Manifest.lock */,
 				5428333F2207631E00F86B23 /* Sources */,
 				542833402207631E00F86B23 /* Frameworks */,
 				542833412207631E00F86B23 /* Resources */,
+				C94B782A3147899BFF03219C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				542833512207633900F86B23 /* LaunchScreen.storyboard in Resources */,
+				54283363220789C000F86B23 /* Default-568h@2x.png in Resources */,
 				5428334E2207633900F86B23 /* Assets.xcassets in Resources */,
 				5428334C2207631E00F86B23 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +206,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B4F6806C027F3E2F00707D54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArchTouch_Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C94B782A3147899BFF03219C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ArchTouch_Challenge/Pods-ArchTouch_Challenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArchTouch_Challenge/Pods-ArchTouch_Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5428333F2207631E00F86B23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				542833492207631E00F86B23 /* ViewController.swift in Sources */,
+				54283365220792EC00F86B23 /* Utilities.swift in Sources */,
+				5428335E2207676500F86B23 /* MainViewController.swift in Sources */,
 				542833472207631E00F86B23 /* AppDelegate.swift in Sources */,
+				542833672207AC7A00F86B23 /* TabBarPrincipalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,9 +397,11 @@
 		};
 		542833562207633900F86B23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75859EB56FE89A31470C1662 /* Pods-ArchTouch_Challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8U3XUDM5X;
 				INFOPLIST_FILE = ArchTouch_Challenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +416,11 @@
 		};
 		542833572207633900F86B23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E64F36CABF3AB30ACA55846 /* Pods-ArchTouch_Challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8U3XUDM5X;
 				INFOPLIST_FILE = ArchTouch_Challenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
