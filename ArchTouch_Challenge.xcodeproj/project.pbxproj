@@ -16,6 +16,11 @@
 		54283365220792EC00F86B23 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54283364220792EC00F86B23 /* Utilities.swift */; };
 		542833672207AC7A00F86B23 /* TabBarPrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542833662207AC7A00F86B23 /* TabBarPrincipalViewController.swift */; };
 		AA86DE26C9BF346B8AE8C5F7 /* Pods_ArchTouch_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8841B435324C0C625792D302 /* Pods_ArchTouch_Challenge.framework */; };
+		EF79DB8622087665007D67F6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB8522087665007D67F6 /* Movie.swift */; };
+		EF79DB8822087D89007D67F6 /* ErrorTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB8722087D89007D67F6 /* ErrorTreatment.swift */; };
+		EF79DB8D2208808D007D67F6 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB8C2208808D007D67F6 /* MovieCollectionCell.swift */; };
+		EF79DB8F2208894A007D67F6 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB8E2208894A007D67F6 /* MovieDetailViewController.swift */; };
+		EF79DB9122088D59007D67F6 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79DB9022088D59007D67F6 /* MovieDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		542833662207AC7A00F86B23 /* TabBarPrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPrincipalViewController.swift; sourceTree = "<group>"; };
 		75859EB56FE89A31470C1662 /* Pods-ArchTouch_Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchTouch_Challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchTouch_Challenge/Pods-ArchTouch_Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		8841B435324C0C625792D302 /* Pods_ArchTouch_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchTouch_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF79DB8522087665007D67F6 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EF79DB8722087D89007D67F6 /* ErrorTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTreatment.swift; sourceTree = "<group>"; };
+		EF79DB8C2208808D007D67F6 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
+		EF79DB8E2208894A007D67F6 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		EF79DB9022088D59007D67F6 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +86,12 @@
 		542833452207631E00F86B23 /* ArchTouch_Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				EF79DB8922087FFF007D67F6 /* View */,
 				542833522207633900F86B23 /* Info.plist */,
 				5428335C2207656E00F86B23 /* Files */,
 				5428335B2207654700F86B23 /* Storyboard */,
-				542833592207652D00F86B23 /* Model */,
-				5428335A2207653500F86B23 /* View */,
 				542833582207651B00F86B23 /* Controllers */,
+				EF79DB8422087656007D67F6 /* Model */,
 				5428334D2207633900F86B23 /* Assets.xcassets */,
 			);
 			path = ArchTouch_Challenge;
@@ -92,22 +102,9 @@
 			children = (
 				5428335D2207676500F86B23 /* MainViewController.swift */,
 				542833662207AC7A00F86B23 /* TabBarPrincipalViewController.swift */,
+				EF79DB8E2208894A007D67F6 /* MovieDetailViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		542833592207652D00F86B23 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5428335A2207653500F86B23 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5428335B2207654700F86B23 /* Storyboard */ = {
@@ -124,6 +121,7 @@
 			children = (
 				542833462207631E00F86B23 /* AppDelegate.swift */,
 				54283364220792EC00F86B23 /* Utilities.swift */,
+				EF79DB8722087D89007D67F6 /* ErrorTreatment.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -135,6 +133,23 @@
 				3E64F36CABF3AB30ACA55846 /* Pods-ArchTouch_Challenge.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF79DB8422087656007D67F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF79DB8522087665007D67F6 /* Movie.swift */,
+				EF79DB9022088D59007D67F6 /* MovieDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF79DB8922087FFF007D67F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF79DB8C2208808D007D67F6 /* MovieCollectionCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,10 +248,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArchTouch_Challenge/Pods-ArchTouch_Challenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -253,7 +270,12 @@
 				54283365220792EC00F86B23 /* Utilities.swift in Sources */,
 				5428335E2207676500F86B23 /* MainViewController.swift in Sources */,
 				542833472207631E00F86B23 /* AppDelegate.swift in Sources */,
+				EF79DB9122088D59007D67F6 /* MovieDetail.swift in Sources */,
+				EF79DB8D2208808D007D67F6 /* MovieCollectionCell.swift in Sources */,
+				EF79DB8F2208894A007D67F6 /* MovieDetailViewController.swift in Sources */,
 				542833672207AC7A00F86B23 /* TabBarPrincipalViewController.swift in Sources */,
+				EF79DB8622087665007D67F6 /* Movie.swift in Sources */,
+				EF79DB8822087D89007D67F6 /* ErrorTreatment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
