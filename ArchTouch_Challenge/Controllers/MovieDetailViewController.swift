@@ -87,7 +87,6 @@ class MovieDetailViewController: UIViewController {
         
         if let genres = movie?.genres {
             
-            genresLbl.text = "Genres:"
             var genresTypes = " "
             var myMutableString = NSMutableAttributedString()
 
@@ -107,7 +106,7 @@ class MovieDetailViewController: UIViewController {
             genresLbl.text = genresTypes
             let length = genresLbl.text?.count
             myMutableString = NSMutableAttributedString(string: "Genres: \(genresTypes)", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20)])
-            myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: NSRange(location:7,length:length! + 2))
+            myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: NSRange(location:7,length:length! + 1))
             genresLbl.attributedText = myMutableString
         }
     }
