@@ -15,13 +15,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var searchBoxHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     var moviesArray = [[String:AnyObject]]()
+    var page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDisplay()
         setDelegates()
         DispatchQueue.main.async {
-            self.getMovies()
+            self.getMovies(page: self.page)
         }
     }
     
@@ -47,7 +48,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         label.textAlignment = NSTextAlignment.center
         
         let image = UIImageView()
-        image.image = (#imageLiteral(resourceName: "theMovieDbLogo"))
+        image.image = (#imageLiteral(resourceName: "Tmdb"))
+        image.layer.cornerRadius = 5
         let imageAspect = image.image!.size.width/image.image!.size.height
         image.frame = CGRect(x: label.frame.origin.x-label.frame.size.height*imageAspect - 5, y: label.frame.origin.y, width: label.frame.size.height*imageAspect, height: label.frame.size.height)
         image.contentMode = UIView.ContentMode.scaleAspectFit
@@ -121,16 +123,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height - 1000
+        
+        if (actualPosition >= contentHeight) {
+            DispatchQueue.main.async {
+                self.getMovies(page: self.page + 1)
+            }
+        }
+    }
+    
     //MARK: -Api Call
     
-    func getMovies() {
+    func getMovies(page:Int) {
         
         Utilities.setLoadingScreen(view: self.view)
 
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = 30
     
-        let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=1f54bd990f1cdfb230adb312546d765d&language=en-US&page=1"
+        let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=1f54bd990f1cdfb230adb312546d765d&language=en-US&page=\(page)"
         
         manager.request("\(url)", method: .get, parameters: nil).responseJSON { response in
             switch (response.result) {

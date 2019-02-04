@@ -14,11 +14,11 @@ class ErrorTreatment: NSObject {
         var message = String()
         switch error {
         case 401:
-            message = NSLocalizedString("error_invalid_api", comment: "")
+            message = "Invalid API key: You must be granted a valid key."
         case 404:
-            message = NSLocalizedString("error_resouce_not_found", comment: "")
+            message = "The resource you requested could not be found."
         default:
-            message = NSLocalizedString("error_SomethingWrong", comment: "")
+            message = "Something went wrong, please try again later."
         }
         return message
     }

@@ -86,12 +86,12 @@
 		542833452207631E00F86B23 /* ArchTouch_Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				EF79DB8922087FFF007D67F6 /* View */,
 				542833522207633900F86B23 /* Info.plist */,
 				5428335C2207656E00F86B23 /* Files */,
 				5428335B2207654700F86B23 /* Storyboard */,
-				542833582207651B00F86B23 /* Controllers */,
 				EF79DB8422087656007D67F6 /* Model */,
+				EF79DB8922087FFF007D67F6 /* View */,
+				542833582207651B00F86B23 /* Controllers */,
 				5428334D2207633900F86B23 /* Assets.xcassets */,
 			);
 			path = ArchTouch_Challenge;
