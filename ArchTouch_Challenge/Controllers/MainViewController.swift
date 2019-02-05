@@ -14,7 +14,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var searchBox: UISearchBar!
     @IBOutlet weak var searchBoxHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var moviesCollectionView: UICollectionView!
-    var moviesArray = [[String:AnyObject]]()
+    var moviesArray = [Movie]()
+    var filteredMovieArray = [Movie]()
+    var baseMovieArray = [Movie]()
     var page = 1
     
     override func viewDidLoad() {
@@ -25,6 +27,34 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.getMovies(page: self.page)
         }
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       filterContentForSearchText(searchText: searchBox.text!)
+       moviesCollectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.moviesArray = self.baseMovieArray
+        moviesCollectionView.reloadData()
+    }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        if searchText != "" {
+           filteredMovieArray = moviesArray
+           baseMovieArray = moviesArray
+           moviesArray = filteredMovieArray.filter {data in
+                
+                return data.original_title?.lowercased().contains(searchText.lowercased()) ?? false
+                
+            }
+        }else { self.moviesArray = self.baseMovieArray}
+        print(filteredMovieArray)
+    }
+
     
     func setDelegates() {
         moviesCollectionView.delegate = self
@@ -109,7 +139,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         if let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCollectionCell {
             
-            let objects = Movie(dictionary: moviesArray[indexPath.row])
+            let objects = moviesArray[indexPath.row]
             cell.object = objects
             return cell
         }
@@ -155,7 +185,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 if let jsonDict = response.result.value as? [String:AnyObject] {
                     if let data = jsonDict["results"] as? [[String:AnyObject]] {
                         for item in data {
-                            self.moviesArray.append(item)
+                            let object = Movie(dictionary: item)
+                            self.moviesArray.append(object)
                         }
                     }
                 }
@@ -170,5 +201,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             Utilities.removeLoadingScreen(view: self.view)
             self.moviesCollectionView.reloadData()
         }
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
     }
 }
