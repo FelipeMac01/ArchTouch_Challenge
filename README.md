@@ -15,10 +15,10 @@ It is  important to have the latest version of Xcode.
 ```
 Clone this repository and open the solution using Xcode, open terminal and run the command line (pod install) inside the app folder.
 ```
-## Show some screens
+## Some screens
 
-![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/Screenshots/TMDB_Home.png)
-![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/Screenshots/TMDB_Movie.png)
+![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/blob/development/Screenshots/TMDB_Home.png)
+![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/blob/development/Screenshots/TMDB_Movie.png)
 
 ## Third-party components (via cocoapods)
 
