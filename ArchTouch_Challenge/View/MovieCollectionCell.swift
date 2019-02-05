@@ -52,7 +52,7 @@ class MovieCollectionCell: UICollectionViewCell {
                         }
                     }
                 }else{
-                    self.movie_background.image = #imageLiteral(resourceName: "Tmdb")
+                    self.movie_background.image = #imageLiteral(resourceName: "theMovieDbLogo")
                 }
             }
         }

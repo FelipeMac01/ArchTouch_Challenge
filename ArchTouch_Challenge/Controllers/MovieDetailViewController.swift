@@ -118,7 +118,7 @@ class MovieDetailViewController: UIViewController {
         Utilities.setLoadingScreen(view: self.view)
         
         let manager = Alamofire.SessionManager.default
-        manager.session.configuration.timeoutIntervalForRequest = 30
+        manager.session.configuration.timeoutIntervalForRequest = 10
         
         let url = "https://api.themoviedb.org/3/movie/\(movieID)?api_key=\(Utilities.tmdb_key)&language=en-US"
         
@@ -128,16 +128,20 @@ class MovieDetailViewController: UIViewController {
                 if let jsonDict = response.result.value as? [String:AnyObject] {
                     let object = MovieDetail(dictionary: jsonDict)
                     self.movie = object
-                    self.configureLayout()
                 }
             case .failure(let error):
                 
                 if let errorMessage = response.response?.statusCode {
                     Utilities.createSimpleAlert(view: self, title: "The Movie DB", message: ErrorTreatment.jsonErrorTreatment(error: errorMessage))
                 }
-                print("Error Number : \(error)")
+                if error.localizedDescription == "The Internet connection appears to be offline." {
+                   Utilities.createSimpleAlert(view: self, title: "The Movie DB", message: "The Internet connection appears to be offline, please check your connection and try again.")
+                }else{
+                    Utilities.createSimpleAlert(view: self, title: "The Movie DB", message: "Something went wrong, please try again later.")
+                }
                 break
             }
+            self.configureLayout()
             Utilities.removeLoadingScreen(view: self.view)
         }
     }

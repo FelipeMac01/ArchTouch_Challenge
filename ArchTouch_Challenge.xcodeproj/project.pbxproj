@@ -102,8 +102,8 @@
 		542833582207651B00F86B23 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5428335D2207676500F86B23 /* MainViewController.swift */,
 				542833662207AC7A00F86B23 /* TabBarPrincipalViewController.swift */,
+				5428335D2207676500F86B23 /* MainViewController.swift */,
 				EF79DB8E2208894A007D67F6 /* MovieDetailViewController.swift */,
 			);
 			path = Controllers;
