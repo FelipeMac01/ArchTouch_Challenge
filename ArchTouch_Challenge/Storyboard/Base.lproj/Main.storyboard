@@ -226,7 +226,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backTabBlack" translatesAutoresizingMaskIntoConstraints="NO" id="FXW-ZF-hrN">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tmdb" translatesAutoresizingMaskIntoConstraints="NO" id="nXg-FG-Wz5">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nXg-FG-Wz5">
                                                 <rect key="frame" x="8" y="8" width="359" height="350"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="350" id="VPv-Oo-UCv"/>
@@ -397,7 +397,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Tmdb" width="400" height="400"/>
         <image name="about_icon" width="24" height="24"/>
         <image name="backTabBlack" width="972" height="135"/>
         <image name="base_background" width="640" height="1136"/>
