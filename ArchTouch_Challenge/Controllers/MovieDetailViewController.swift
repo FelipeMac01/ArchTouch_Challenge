@@ -75,14 +75,20 @@ class MovieDetailViewController: UIViewController {
         
         if let release_date = movie?.release_date {
             release_dateLbl.attributedText = Utilities.addTwoColorsInLabel(string1: "Release date: ", sizeColorA: 20, sizeColorB: 18, string2: release_date)
+        }else{
+            release_dateLbl.attributedText = Utilities.addTwoColorsInLabel(string1: "Release date: ", sizeColorA: 20, sizeColorB: 18, string2: "Unavailable")
         }
         
         if let over_view = movie?.overview {
             overviewTextView.text = over_view
+        }else{
+            overviewTextView.text = "Unavailable"
         }
         
         if let duration = movie?.runtime {
             durationLbl.attributedText = Utilities.addTwoColorsInLabel(string1: "Duration: ", sizeColorA: 20, sizeColorB: 18, string2: "\(duration) Min.")
+        }else{
+            durationLbl.attributedText = Utilities.addTwoColorsInLabel(string1: "Duration: ", sizeColorA: 20, sizeColorB: 18, string2: "Unavailable")
         }
         
         if let genres = movie?.genres {
@@ -108,6 +114,8 @@ class MovieDetailViewController: UIViewController {
             myMutableString = NSMutableAttributedString(string: "Genres: \(genresTypes)", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20)])
             myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: NSRange(location:7,length:length! + 1))
             genresLbl.attributedText = myMutableString
+        }else{
+            genresLbl.attributedText = Utilities.addTwoColorsInLabel(string1: "Genres: ", sizeColorA: 20, sizeColorB: 18, string2: "Unavailable")
         }
     }
     

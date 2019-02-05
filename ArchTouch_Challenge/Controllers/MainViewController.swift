@@ -168,7 +168,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let contentHeight = scrollView.contentSize.height - 1000
         if (actualPosition >= contentHeight) {
             DispatchQueue.main.async {
-                self.getMovies(page: self.page + 1)
+                self.page += 1
+                self.getMovies(page: self.page)
             }
         }
     }
