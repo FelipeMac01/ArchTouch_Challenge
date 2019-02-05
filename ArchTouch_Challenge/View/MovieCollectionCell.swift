@@ -29,7 +29,7 @@ class MovieCollectionCell: UICollectionViewCell {
             
             if let data = object {
                 
-                self.movie_background.image = #imageLiteral(resourceName: "Tmdb")
+                self.movie_background.image = nil
                 self.movie_background.kf.indicatorType = .activity
                 self.movie_background.kf.indicator?.startAnimatingView()
                 

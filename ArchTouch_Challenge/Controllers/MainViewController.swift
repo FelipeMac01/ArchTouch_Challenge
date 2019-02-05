@@ -38,23 +38,23 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.moviesArray = self.baseMovieArray
-        moviesCollectionView.reloadData()
+        resetMovieArray()
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         if searchText != "" {
-           filteredMovieArray = moviesArray
-           baseMovieArray = moviesArray
            moviesArray = filteredMovieArray.filter {data in
                 
                 return data.original_title?.lowercased().contains(searchText.lowercased()) ?? false
                 
             }
         }else { self.moviesArray = self.baseMovieArray}
-        print(filteredMovieArray)
     }
-
+    
+    func resetMovieArray() {
+        self.moviesArray = self.baseMovieArray
+        self.moviesCollectionView.reloadData()
+    }
     
     func setDelegates() {
         moviesCollectionView.delegate = self
@@ -101,6 +101,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                        animations: { () -> Void in
                         self.searchBoxHeightConstraint.constant = 56
                         self.view.layoutIfNeeded()
+                        self.resetMovieArray()
         }, completion: { (finished) -> Void in
         })
     }
@@ -113,6 +114,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                        animations: { () -> Void in
                         self.searchBoxHeightConstraint.constant = 0
                         self.view.layoutIfNeeded()
+                        self.resetMovieArray()
         }, completion: { (finished) -> Void in
         })
     }
@@ -188,6 +190,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             let object = Movie(dictionary: item)
                             self.moviesArray.append(object)
                         }
+                        self.filteredMovieArray = self.moviesArray
+                        self.baseMovieArray = self.moviesArray
                     }
                 }
             case .failure(let error):

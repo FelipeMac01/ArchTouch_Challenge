@@ -110,7 +110,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-lM-0Yc">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="493"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xg3-ne-snf">
                                     <size key="itemSize" width="179" height="208"/>
@@ -166,7 +166,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" backgroundImage="base_background" translatesAutoresizingMaskIntoConstraints="NO" id="U55-lN-G4c">
+                            <searchBar contentMode="redraw" placeholder="Enter movie name..." backgroundImage="base_background" translatesAutoresizingMaskIntoConstraints="NO" id="U55-lN-G4c">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -183,7 +183,7 @@
                             <constraint firstItem="U55-lN-G4c" firstAttribute="top" secondItem="TV5-Nf-yjd" secondAttribute="top" id="5of-Xn-aed"/>
                             <constraint firstItem="b8a-lM-0Yc" firstAttribute="top" secondItem="U55-lN-G4c" secondAttribute="bottom" id="5xH-Wd-yeg"/>
                             <constraint firstItem="BPY-vU-HsZ" firstAttribute="bottom" secondItem="TV5-Nf-yjd" secondAttribute="bottom" id="8EI-rF-UCn"/>
-                            <constraint firstItem="b8a-lM-0Yc" firstAttribute="bottom" secondItem="TV5-Nf-yjd" secondAttribute="bottom" id="KL5-pU-4Of"/>
+                            <constraint firstItem="b8a-lM-0Yc" firstAttribute="bottom" secondItem="TV5-Nf-yjd" secondAttribute="bottom" constant="-5" id="KL5-pU-4Of"/>
                             <constraint firstItem="b8a-lM-0Yc" firstAttribute="leading" secondItem="TV5-Nf-yjd" secondAttribute="leading" id="OBM-Z9-IGF"/>
                             <constraint firstAttribute="trailing" secondItem="U55-lN-G4c" secondAttribute="trailing" id="YfO-sY-DuQ"/>
                             <constraint firstItem="b8a-lM-0Yc" firstAttribute="trailing" secondItem="TV5-Nf-yjd" secondAttribute="trailing" id="ZJi-xj-Wnd"/>
