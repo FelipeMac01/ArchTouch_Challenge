@@ -28,28 +28,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        view.endEditing(true)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-       filterContentForSearchText(searchText: searchBox.text!)
-       moviesCollectionView.reloadData()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        resetMovieArray()
-    }
-    
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-        if searchText != "" {
-           moviesArray = filteredMovieArray.filter {data in
-                
-                return data.original_title?.lowercased().contains(searchText.lowercased()) ?? false
-                
-            }
-        }else { self.moviesArray = self.baseMovieArray}
-    }
+    //MARK: -Functions
     
     func resetMovieArray() {
         self.moviesArray = self.baseMovieArray
@@ -119,12 +98,39 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         })
     }
     
+    //MARK: -IBActions
+    
     @IBAction func checkSearchBoxState(_ sender: UIBarButtonItem) {
         if searchBoxHeightConstraint.constant == 0 {
             activateSearchBox()
         }else{
             desactivateSearchBox()
         }
+    }
+    
+    //MARK: -SearchBar Delegates
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterContentForSearchText(searchText: searchBox.text!)
+        moviesCollectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resetMovieArray()
+    }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        if searchText != "" {
+            moviesArray = filteredMovieArray.filter {data in
+                
+                return data.original_title?.lowercased().contains(searchText.lowercased()) ?? false
+                
+            }
+        }else { self.moviesArray = self.baseMovieArray}
     }
     
     //MARK: -CollectionView Delegates
@@ -149,20 +155,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         guard let cell = moviesCollectionView.cellForItem(at: indexPath) as? MovieCollectionCell else {return}
-            
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailVC") as? MovieDetailViewController {
                 vc.movieID = cell.movieID
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height - 1000
-        
         if (actualPosition >= contentHeight) {
             DispatchQueue.main.async {
                 self.getMovies(page: self.page + 1)
@@ -179,7 +181,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = 30
     
-        let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=1f54bd990f1cdfb230adb312546d765d&language=en-US&page=\(page)"
+        let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=\(Utilities.tmdb_key)&language=en-US&page=\(page)"
         
         manager.request("\(url)", method: .get, parameters: nil).responseJSON { response in
             switch (response.result) {
@@ -205,12 +207,5 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             Utilities.removeLoadingScreen(view: self.view)
             self.moviesCollectionView.reloadData()
         }
-    }
-}
-
-extension MainViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO
     }
 }

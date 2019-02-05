@@ -120,7 +120,7 @@ class MovieDetailViewController: UIViewController {
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = 30
         
-        let url = "https://api.themoviedb.org/3/movie/\(movieID)?api_key=1f54bd990f1cdfb230adb312546d765d&language=en-US"
+        let url = "https://api.themoviedb.org/3/movie/\(movieID)?api_key=\(Utilities.tmdb_key)&language=en-US"
         
         manager.request("\(url)", method: .get, parameters: nil).responseJSON { response in
             switch (response.result) {
@@ -142,4 +142,6 @@ class MovieDetailViewController: UIViewController {
         }
     }
 }
+
+
 
