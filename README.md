@@ -2,8 +2,6 @@
 
 This is the App created for the MOBILE DEV CODE CHALLENGE By ArchTouch for iOS Development Position.
 
-![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/?raw=true "iOS's capture")
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
@@ -19,8 +17,8 @@ Clone this repository and open the solution using Xcode, open terminal and run t
 ```
 ## Show some screens
 
-![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/Screenshots/TMDB_Home.png?raw=true "iOS's capture")
-![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/Screenshots/TMDB_Movie.png?raw=true "iOS's capture")
+![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/Screenshots/TMDB_Home.png)
+![alt text](https://github.com/FelipeMac01/ArchTouch_Challenge/Screenshots/TMDB_Movie.png)
 
 ## Third-party components (via cocoapods)
 
